@@ -78,7 +78,8 @@ public class RoadLogistic implements Logistic {
     }
 
     public List<Ways>  buildWays(Staying a, Staying b, Date date) {
-        List<Ways> ways = buildWays(a,b, date);
+        List<Ways> ways = buildWays(a,b);
+
 
         return null; //TODO
     }

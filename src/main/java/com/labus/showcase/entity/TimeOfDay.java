@@ -15,9 +15,9 @@ public class TimeOfDay {
     }
 
     public void setValue(String hour, String minute, String second) {
-        this.hour = Integer.parseInt(hour);
-        this.minute = Integer.parseInt(minute);
-        this.second = Integer.parseInt(second);
+        this.hour = Integer.parseInt(hour.replaceAll("[^0-9]", ""));
+        this.minute = Integer.parseInt(minute.replaceAll("[^0-9]", ""));
+        this.second = Integer.parseInt(second.replaceAll("[^0-9]", ""));
     }
 
 /*    @Override

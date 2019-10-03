@@ -40,6 +40,7 @@ public class ParseShowCase {
         for(Element elementsTr : shedule.select("table").select("tr")){
             Element hourElement = elementsTr.select("td").first();
             if(hourElement!=null) {
+                if(!hourElement.toString().equals("<td>&nbsp;</td>"))
                 time[0] = hourElement.text();
                 elementsTr.select("td").first().remove();
                 for (Element elementTd : elementsTr.select("td")) {
@@ -53,9 +54,9 @@ public class ParseShowCase {
     }
 
     public static void main(String[] args) {
-        ParseShowCase parseShowCase = new ParseShowCase("https://vn.rozklad.in.ua/home/schedule/12/1457");
+        ParseShowCase parseShowCase = new ParseShowCase("https://vn.rozklad.in.ua/home/schedule/10/120");
         try {
-            System.out.println(parseShowCase.getShowCaseWeekend().getAfter(new TimeOfDay("20","47","00")).getValue());
+            System.out.println(parseShowCase.getShowCaseWorkingDays().getAfter(new TimeOfDay("20","47","00")).getValue());
         } catch (IOException e) {
             e.printStackTrace();
         }
