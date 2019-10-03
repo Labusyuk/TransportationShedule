@@ -10,10 +10,10 @@ Online showcase the cinema
 4. Run with Tomcat
 
 ###### Note: 
-Еhe program stores transport data, routes, stops, schedules in collections. Parsing takes a long time. Therefore, it is executed only at the first access to resources and stored for one hour. The first treatment takes about 1-4 minutes.
-There's really a lot of information out there, at each stop, on your schedule: weekdays and weekends. Routes in one transport in different directions are regarded as different.
+Еhe program stores transport data, routes, stops, schedules in collections. Parsing takes a long time. Therefore, it is executed only at the first access to resources and stored for one hour. The first call lasts about 1-4 minutes.
+There's really a lot of information out there, at each stop, on your schedule: weekdays and weekends. Routes in one transport in different directions are regarded as different ((Залізничний вокзал - Вишенька   /  Вишенька - Залізничний вокзал ).
 
-###### Entity relationship diagram database
+###### The look of the web page of the service
 
 ![Image of Yaktocat](https://github.com/Labusyuk/ShowcaseTheCinema/blob/master/CinemaBDModelFirst.png?raw=true)
 
