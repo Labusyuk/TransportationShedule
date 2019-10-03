@@ -18,4 +18,4 @@ There's really a lot of information out there, at each stop, on your schedule: w
 ![Image of Yaktocat](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/webview.png)
 
 ###### Warning: 
-Time scheduling is not working at the time you choose
+Selecting a specific route time does not work at this time.
