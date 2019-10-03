@@ -1,6 +1,6 @@
 # Transportation Shedule
 Java EE. Logistic system showcase. 
-Online showcase the cinema
+
 ###### Instructions to run the project:
 
 1. Download and install jdk 1.8, Git, Apache Tomcat.
