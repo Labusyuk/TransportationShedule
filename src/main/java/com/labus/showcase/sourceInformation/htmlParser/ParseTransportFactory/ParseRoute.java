@@ -41,7 +41,7 @@ public class ParseRoute {
             String[] s = document.baseUri().split("/");
             String str[] = elementStaying.attr("onclick").replaceAll(".*\\(|\\).*", "").split(", ");
             String urlRoute2 = s[0]+"//"+s[2]+"/"+s[3]+"/"+s[4]+"/"+str[0]+(!str[1].equals("null")?"/"+str[1]:"");
-            System.out.println(urlRoute2);
+            //System.out.println(urlRoute2);
             ParseShowCase parseShowCase = new ParseShowCase(urlRoute2);
             Staying staying = new Staying();
             staying.setShowCaseWorkingDays(parseShowCase.getShowCaseWorkingDays());

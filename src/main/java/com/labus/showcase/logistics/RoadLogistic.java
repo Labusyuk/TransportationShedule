@@ -1,11 +1,8 @@
 package com.labus.showcase.logistics;
 
-import com.labus.showcase.entity.Route;
-import com.labus.showcase.entity.Staying;
-import com.labus.showcase.entity.Ways;
+import com.labus.showcase.entity.*;
 import com.labus.showcase.sourceInformation.htmlParser.ParseTransportFactory.ParseTransport;
 import com.labus.showcase.sourceInformation.htmlParser.TransportPool;
-import com.labus.showcase.entity.Transport;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.io.IOException;
@@ -77,11 +74,20 @@ public class RoadLogistic implements Logistic {
         return ways;
     }
 
-    public List<Ways>  buildWays(Staying a, Staying b, Date date) {
-        List<Ways> ways = buildWays(a,b);
+    public List<Ways>  buildWays(Staying a, Staying b, TimeOfDay timeOfDay, boolean weekend) {
+        List<Ways> list = buildWays(a, b);
+        for(Ways ways:list){
+            TimeOfDay timeOfDay1 = timeOfDay;
+            for(Transport transport: ways) {
+                transport.getForward().setStartTime(weekend==false?transport.getForward().getFirst().getShowCaseWorkingDays().getAfter(timeOfDay1):transport.getForward().getFirst().getShowCaseWeekend().getAfter(timeOfDay1));
+                for (Staying staying : transport.getForward()) {
+                    timeOfDay1 = (weekend==false?staying.getShowCaseWorkingDays().getAfter(timeOfDay1):staying.getShowCaseWeekend().getAfter(timeOfDay1));
 
-
-        return null; //TODO
+                }
+                transport.getForward().setFinishTime(timeOfDay1);
+            }
+        }
+        return list; //TODO
     }
 
     public static void main(String[] args) {
@@ -92,9 +98,9 @@ public class RoadLogistic implements Logistic {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
-        for(Ways ways:new RoadLogistic().buildWays(new Staying("вул. Воїнів Інтернаціоналістів"), new Staying("Педколедж"))){
+        for(Ways ways:new RoadLogistic().buildWays(new Staying("вул. Воїнів Інтернаціоналістів"), new Staying("Педколедж"),new TimeOfDay("14","20","00"),false)){
             for(Transport transport: ways){
-                System.out.print(transport.getName()+" ["+transport.getForward().getDuration()+"] "+transport.getForward().getFirst().getName()+" "+transport.getForward().getLast().getName()+" --- ");
+                System.out.print(transport.getName()+" ["+transport.getForward().getDuration()+"] "+transport.getForward().getFirst().getName()+" {"+transport.getForward().getStartTime()+"} "+transport.getForward().getLast().getName()+" {"+transport.getForward().getFinishTime()+"} "+" --- ");
             }
             System.out.println();
         }

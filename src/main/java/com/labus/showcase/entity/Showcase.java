@@ -11,10 +11,14 @@ public class Showcase extends LinkedList<TimeOfDay> {
                 Iterator<TimeOfDay> iterator = super.iterator();
         while(iterator.hasNext()){
             TimeOfDay tempTimeOfDay = iterator.next();
-            if(timeOfDay.getHour()<=tempTimeOfDay.getHour())
-                if(timeOfDay.getMinute()<=tempTimeOfDay.getMinute())
+            if(timeOfDay.getHour()<=tempTimeOfDay.getHour()){
+                if(timeOfDay.getHour()<tempTimeOfDay.getHour())return tempTimeOfDay;
+                if(timeOfDay.getMinute()<=tempTimeOfDay.getMinute()){
+                    if(timeOfDay.getMinute()<tempTimeOfDay.getMinute())return tempTimeOfDay;
                     if(timeOfDay.getSecond()<=tempTimeOfDay.getSecond())
                         return tempTimeOfDay;
+                }
+            }
         }
         return null;
     }

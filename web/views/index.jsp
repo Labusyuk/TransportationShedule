@@ -22,7 +22,7 @@
 
 
     <!-- Title -->
-    <title>Vobilet - a responsive, flat and full featured admin template</title>
+    <title>Gemicle - Vinnytsia Logistics</title>
 		
 	<link href="\views\assets\css\bootstrap.css" rel="stylesheet">
 	<link href="\views\assets\css\bootstrap-responsive.css" rel="stylesheet">
@@ -113,9 +113,9 @@
   <tr class="success">
   <td colspan="2">
   <center>
-  <p><input type="checkbox" name="time" value="timeOn">Планувати точний час</p>
-  <input type="time">
-  <p><input type="checkbox" name="weekend" value="weekendOn">Вихідний день</p>
+  <p><input type="checkbox" name="useTime" value="true">Планувати точний час</p>
+  <input name="time" type="time">
+  <p><input type="checkbox" name="weekend" value="true">Вихідний день</p>
   <center>
   </td>
   </tr>
@@ -156,14 +156,14 @@
 <tr>
             <c:if test="${ways.size()==1}">
                 <c:forEach var="transport" items="${ways}">
-        <td colspan="3">${transport.getForward().getFirst().getName()}</td>
-        <td colspan="3">${transport.getForward().getLast().getName()}</td>
+        <td colspan="3"><span class="label label-info">${transport.getForward().getStartTime()}</span> ${transport.getForward().getFirst().getName()}</td>
+        <td colspan="3">${transport.getForward().getLast().getName()}<span class="label label-info"> ${transport.getForward().getFinishTime()}</span></td>
                 </c:forEach>
             </c:if>
             <c:if test="${ways.size()>1}">
-                <td colspan="2">${ways.get(0).getForward().getFirst().getName()}</td>
-                <td colspan="2">${ways.get(0).getForward().getLast().getName()}</td>
-                <td colspan="2">${ways.get(1).getForward().getLast().getName()}</td>
+                <td colspan="2"><span class="label label-info">${ways.get(0).getForward().getStartTime()} </span>${ways.get(0).getForward().getFirst().getName()}</td>
+                <td colspan="2"><span class="label label-info">${ways.get(0).getForward().getFinishTime()} </span>${ways.get(0).getForward().getLast().getName()} <span class="label label-info"> ${ways.get(1).getForward().getStartTime()}</span></td>
+                <td colspan="2">${ways.get(1).getForward().getLast().getName()}<span class="label label-info"> ${ways.get(1).getForward().getFinishTime()}</span></td>
             </c:if>
 
 </tr>

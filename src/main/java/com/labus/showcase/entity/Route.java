@@ -8,6 +8,7 @@ import java.util.List;
 public class Route extends LinkedList<Staying> implements Serializable {
     private String name;
     private int duration = 0;
+    private TimeOfDay startTime, FinishTime;
 
     public Route(Collection<? extends Staying> c, String name) {
         super(c);
@@ -53,5 +54,21 @@ public class Route extends LinkedList<Staying> implements Serializable {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public TimeOfDay getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(TimeOfDay startTime) {
+        this.startTime = startTime;
+    }
+
+    public TimeOfDay getFinishTime() {
+        return FinishTime;
+    }
+
+    public void setFinishTime(TimeOfDay finishTime) {
+        FinishTime = finishTime;
     }
 }

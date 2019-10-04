@@ -1,6 +1,7 @@
 package com.labus.showcase.entity;
 
 import java.io.Serializable;
+import java.sql.Time;
 
 public class Transport implements Serializable {
     protected String name, nameType, nameRoute;

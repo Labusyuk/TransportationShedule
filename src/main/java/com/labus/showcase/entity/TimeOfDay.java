@@ -9,6 +9,11 @@ public class TimeOfDay {
         setValue( hour,  minute,  second);
     }
 
+    public TimeOfDay(String timeOfDay){
+        String[] str = timeOfDay.split(":");
+        setValue(str[0],str[1],"0");
+    }
+
 
     public String getValue() {
         return hour+":"+minute+":"+second;
@@ -20,7 +25,12 @@ public class TimeOfDay {
         this.second = Integer.parseInt(second.replaceAll("[^0-9]", ""));
     }
 
-/*    @Override
+    @Override
+    public String toString() {
+        return getValue();
+    }
+
+    /*    @Override
     public String toString() {
         String time = new String("");
         int temp=0;

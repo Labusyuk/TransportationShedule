@@ -41,7 +41,7 @@ public class ParseTransport implements Parser {
                     if(actionsMap.get(str)!=null){
                         transport = actionsMap.get(str).getTransport();
                         transport.setNameRoute(elementRoute.select("span").text());
-                        System.out.println(elementRoute.select("span").text());
+                        //System.out.println(elementRoute.select("span").text());
                         ParseRoute route = new ParseRoute(url+elementRoute.attr("href"));
                         try {
                             transport.setRoute(route.getRoute());

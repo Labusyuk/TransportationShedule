@@ -2,6 +2,7 @@ package com.labus.showcase.sourceInformation.htmlParser.ParseTransportFactory;
 
 import com.labus.showcase.entity.Route;
 import com.labus.showcase.entity.Showcase;
+import com.labus.showcase.entity.Staying;
 import com.labus.showcase.entity.TimeOfDay;
 import com.labus.showcase.sourceInformation.htmlParser.PagePool;
 import org.jsoup.nodes.Document;
@@ -56,6 +57,7 @@ public class ParseShowCase {
     public static void main(String[] args) {
         ParseShowCase parseShowCase = new ParseShowCase("https://vn.rozklad.in.ua/home/schedule/10/120");
         try {
+            for(TimeOfDay timeOfDay: parseShowCase.getShowCaseWorkingDays())
             System.out.println(parseShowCase.getShowCaseWorkingDays().getAfter(new TimeOfDay("20","47","00")).getValue());
         } catch (IOException e) {
             e.printStackTrace();
