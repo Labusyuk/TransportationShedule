@@ -15,7 +15,16 @@ There's really a lot of information out there, at each stop, on your schedule: w
 
 ###### The look of the web page of the service
 
-![Image of Yaktocat](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/webview.png)
+![Look of the web page](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/webview.png)
+
+###### Image of structute working webapp
+
+![Structure diagram](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/StructureDiagramTransportationShedule.png)
+
+###### Image project structute
+
+![Project structure](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/projectStructure.png)
+
 
 ###### Warning: 
 Selecting a specific route time does not work at this time.
