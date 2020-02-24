@@ -19,12 +19,15 @@ There's really a lot of information out there, at each stop, on your schedule: w
 
 ###### Image of structute working webapp
 
-![Structure diagram](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/StructureDiagramTransportationShedule.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/StructureDiagramTransportationShedule.png">
+</p>
 
 ###### Image project structute
 
-![Project structure](https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/projectStructure.png)
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Labusyuk/TransportationShedule/master/other/projectStructure.png">
+</p>
 
 ###### Warning: 
 Selecting a specific route time does not work at this time.
